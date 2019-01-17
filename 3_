@@ -1,0 +1,25 @@
+  const N = 10;
+var
+ c:array[1..N] of integer;
+ b:array[1..N] of integer;
+ i,j,a:integer;
+begin
+ write('Исходный массив: ');
+ for i:= 1 to N do begin
+   c[i]:= random(30)-15;
+   write(c[i],' ');
+ end;
+ writeln;
+ write('Введите число: ');
+ readln(a);
+ write('Отсортированный массив: ');
+ for i:= 1 to N do begin
+  if c[i] < a then begin
+    j:=j+1;
+    b[j]:= c[i];
+    write(b[j],' ');
+  end;
+ end;
+ writeln;
+ write('Число элементов массива B: ',j);
+end.

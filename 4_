@@ -1,0 +1,24 @@
+  const N = 10;
+var
+ a:array[1..N, 1..N] of integer;
+ i,j,k,s,q:integer;
+begin
+ writeln('Исходный массив: ');
+ for i:= 1 to N do begin
+  for j:= 1 to N do begin
+   a[i,j]:= random(30)-15;
+   write(a[i,j]:4);
+   if j mod N = 0 then writeln;
+  end;
+ end;
+  j:=N;
+ for i:=1 to N do begin
+   if a[i,i] > a[i,j] then begin
+    for k:=1 to N do
+     s:=s+a[i,k];
+   end;
+   j:=j-1;
+  end;
+ writeln;
+ write('Сумма элементов равна: ',s);
+end.

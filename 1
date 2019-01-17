@@ -1,0 +1,27 @@
+ const N = 10;
+var
+ a:array[1..N] of integer;
+ i,j,b:integer;
+begin
+ write('Исходный массив: ');
+ for i:= 1 to 10 do begin
+   a[i]:= random(30)-15;
+   write(a[i],' ');
+ end;
+ writeln;
+ write('Отсортированный массив: ');
+ for i:= 1 to 9 do
+ for j:= i+1 to 10 do
+   if a[i] > a[j] then begin
+     b:= a[i];
+     a[i]:= a[j];
+     a[j]:= b;
+   end;
+ for i:=1 to 10 do write(a[i],' ');
+ b:=1;
+ for i:= 1 to 10 do
+  if (a[i] >= 0) and (i mod 2 = 0) then
+  b:=b*a[i];
+ writeln;
+ write('Произведение неотрицательных элементов массива с четными номерами: ',b);
+end.

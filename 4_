@@ -1,7 +1,7 @@
   const N = 10;
 var
  a:array[1..N, 1..N] of integer;
- i,j,k,s,q:integer;
+ i,j,k,s:integer;
 begin
  writeln('Исходный массив: ');
  for i:= 1 to N do begin
